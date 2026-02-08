@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>⭐ אני אוסף הצלחות! ⭐</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        body {
+            font-family: 'Arial', 'Comic Sans MS', sans-serif;
+            background: linear-gradient(135deg, #FF6B9D 0%, #FFA07A 25%, #FFD700 50%, #98D8C8 75%, #6B9BD5 100%);
+            min-height: 100vh;
+            padding: 0;
+            direction: rtl;
+            overflow-x: hidden;
+        }
+        
+        .fun-header {
+            background: linear-gradient(135deg, #FF1744 0%, #F50057 50%, #FF4081 100%);
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .fun-header::before {
+            content: "⭐";
+            position: absolute;
+            font-size: 100px;
+            opacity: 0.2;
+            top: -20px;
+            right: 20px;
+            animation: spin 10s linear infinite;
+        }
+        
+        .fun-header::after {
+            content: "🎉";
+            position: absolute;
+            font-size: 100px;
+            opacity: 0.2;
+            bottom: -20px;
+            left: 20px;
+            animation: bounce 2s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .fun-header h1 {
+            font-size: 64px;
+            color: white;
+            text-shadow: 4px 4px 8px rgba(0,0,0,0.3);
+            margin: 0;
+            animation: titleBounce 2s ease-in-out infinite;
+        }
+        
+        @keyframes titleBounce {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 40px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            border: 6px solid #FFD700;
+        }
+        
+        .card-header {
+            font-size: 52px;
+            font-weight: bold;
+            color: #FF1744;
+            margin-bottom: 30px;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .big-emoji {
+            font-size: 120px;
+            text-align: center;
+            margin: 20px 0;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        .info-input {
+            margin-bottom: 25px;
+        }
+        
+        .info-input label {
+            display: block;
+            font-size: 36px;
+            font-weight: bold;
+            color: #6B9BD5;
+            margin-bottom: 10px;
+        }
+        
+        .info-input input {
+            width: 100%;
+            font-size: 36px;
+            padding: 20px;
+            border: 5px solid #6B9BD5;
+            border-radius: 25px;
+            text-align: right;
+            font-weight: bold;
+            background: #F0F8FF;
+        }
+        
+        .info-input input:focus {
+            outline: none;
+            border-color: #FF1744;
+            box-shadow: 0 0 20px rgba(255,23,68,0.3);
+        }
+        
+        .goals-section {
+            margin-bottom: 40px;
+        }
+        
+        .goal-box {
+            background: linear-gradient(135deg, #FFE5EC 0%, #FFD6E8 100%);
+            padding: 30px;
+            border-radius: 30px;
+            margin-bottom: 25px;
+            border: 5px solid #FF69B4;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .goal-emoji {
+            font-size: 80px;
+            min-width: 100px;
+            text-align: center;
+        }
+        
+        .goal-input {
+            flex: 1;
+            font-size: 32px;
+            padding: 18px;
+            border: 4px solid #FF69B4;
+            border-radius: 20px;
+            text-align: right;
+            font-weight: bold;
+            background: white;
+        }
+        
+        .mega-star {
+            font-size: 100px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            user-select: none;
+            position: relative;
+        }
+        
+        .mega-star.off {
+            filter: grayscale(100%) brightness(2);
+            opacity: 0.3;
+        }
+        
+        .mega-star.on {
+            filter: grayscale(0%) drop-shadow(0 0 20px gold);
+            animation: starPop 0.5s ease;
+        }
+        
+        @keyframes starPop {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.4) rotate(15deg); }
+            100% { transform: scale(1); }
+        }
+        
+        .activities-grid {
+            display: grid;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .activity-mega-card {
+            background: white;
+            padding: 50px;
+            border-radius: 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            border: 8px solid;
+            transition: transform 0.3s;
+        }
+        
+        .activity-mega-card:active {
+            transform: scale(0.98);
+        }
+        
+        .activity-mega-card.morning {
+            border-color: #FF69B4;
+            background: linear-gradient(135deg, #FFE5EC 0%, #FFF0F5 100%);
+        }
+        
+        .activity-mega-card.meal {
+            border-color: #FFD700;
+            background: linear-gradient(135deg, #FFFACD 0%, #FFFFE0 100%);
+        }
+        
+        .activity-mega-card.outdoor {
+            border-color: #7FFF00;
+            background: linear-gradient(135deg, #E6FFE6 0%, #F0FFF0 100%);
+        }
+        
+        .activity-emoji-giant {
+            font-size: 140px;
+            margin-bottom: 20px;
+            animation: wiggle 3s ease-in-out infinite;
+        }
+        
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-5deg); }
+            75% { transform: rotate(5deg); }
+        }
+        
+        .activity-name-giant {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        
+        .star-row {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .activity-star-giant {
+            font-size: 90px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+        
+        .activity-star-giant.off {
+            filter: grayscale(100%) brightness(2);
+            opacity: 0.3;
+        }
+        
+        .activity-star-giant.on {
+            filter: grayscale(0%) drop-shadow(0 0 15px gold);
+            transform: scale(1.1);
+        }
+        
+        .violence-box {
+            background: linear-gradient(135deg, #FF6B6B 0%, #FF8E8E 100%);
+            padding: 40px;
+            border-radius: 40px;
+            border: 8px solid #D32F2F;
+            box-shadow: 0 15px 40px rgba(211,47,47,0.3);
+        }
+        
+        .violence-box h3 {
+            font-size: 52px;
+            color: white;
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .violence-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .violence-btn {
+            width: 120px;
+            height: 120px;
+            font-size: 72px;
+            background: white;
+            border: 6px solid #D32F2F;
+            border-radius: 30px;
+            color: #D32F2F;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            transition: all 0.2s;
+        }
+        
+        .violence-btn:active {
+            transform: scale(0.9);
+        }
+        
+        .violence-number {
+            font-size: 100px;
+            font-weight: bold;
+            color: white;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            min-width: 150px;
+            text-align: center;
+        }
+        
+        .treasure-mega-box {
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            padding: 50px;
+            border-radius: 40px;
+            border: 8px solid #FF8C00;
+            box-shadow: 0 20px 50px rgba(255,140,0,0.4);
+            text-align: center;
+        }
+        
+        .treasure-mega-box h3 {
+            font-size: 60px;
+            color: white;
+            margin-bottom: 30px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+        }
+        
+        .warning-mega {
+            background: white;
+            padding: 30px;
+            border-radius: 30px;
+            margin-bottom: 25px;
+            border: 6px solid #D32F2F;
+        }
+        
+        .warning-mega p {
+            font-size: 36px;
+            font-weight: bold;
+            color: #D32F2F;
+            margin: 15px 0;
+        }
+        
+        .rewards-mega-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .reward-mega-card {
+            background: white;
+            padding: 40px;
+            border-radius: 30px;
+            text-align: center;
+            cursor: pointer;
+            border: 6px solid transparent;
+            transition: all 0.3s;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .reward-mega-card:active {
+            transform: scale(0.95);
+        }
+        
+        .reward-mega-card.selected {
+            border-color: #FF1744;
+            box-shadow: 0 15px 40px rgba(255,23,68,0.4);
+            transform: scale(1.05);
+        }
+        
+        .reward-emoji-huge {
+            font-size: 100px;
+            margin-bottom: 15px;
+        }
+        
+        .reward-name-big {
+            font-size: 36px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .notes-mega-box {
+            background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+            padding: 40px;
+            border-radius: 30px;
+            border: 6px solid #2196F3;
+        }
+        
+        .notes-mega-box h3 {
+            font-size: 48px;
+            color: #1976D2;
+            margin-bottom: 20px;
+        }
+        
+        .notes-mega-box textarea {
+            width: 100%;
+            min-height: 200px;
+            font-size: 32px;
+            padding: 25px;
+            border: 5px solid #2196F3;
+            border-radius: 25px;
+            font-family: Arial, sans-serif;
+            resize: vertical;
+            background: white;
+        }
+        
+        .summary-mega {
+            background: linear-gradient(135deg, #E1BEE7 0%, #CE93D8 100%);
+            padding: 50px;
+            border-radius: 40px;
+            border: 8px solid #9C27B0;
+            box-shadow: 0 20px 50px rgba(156,39,176,0.3);
+        }
+        
+        .summary-mega h3 {
+            font-size: 60px;
+            color: white;
+            text-align: center;
+            margin-bottom: 40px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+        }
+        
+        .stats-mega-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+        
+        .stat-mega {
+            background: white;
+            padding: 40px;
+            border-radius: 30px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .stat-value-huge {
+            font-size: 80px;
+            font-weight: bold;
+            color: #9C27B0;
+            margin-bottom: 15px;
+        }
+        
+        .stat-label-big {
+            font-size: 32px;
+            color: #666;
+            font-weight: bold;
+        }
+        
+        .mega-buttons {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 40px;
+        }
+        
+        .mega-btn {
+            padding: 40px;
+            font-size: 42px;
+            font-weight: bold;
+            border: none;
+            border-radius: 35px;
+            cursor: pointer;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            transition: all 0.2s;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .mega-btn:active {
+            transform: translateY(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .btn-save {
+            background: linear-gradient(135deg, #4CAF50 0%, #66BB6A 100%);
+        }
+        
+        .btn-summary {
+            background: linear-gradient(135deg, #FF9800 0%, #FFB74D 100%);
+        }
+        
+        .btn-export {
+            background: linear-gradient(135deg, #2196F3 0%, #42A5F5 100%);
+        }
+        
+        .btn-reset {
+            background: linear-gradient(135deg, #9E9E9E 0%, #BDBDBD 100%);
+        }
+        
+        .celebration {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+        }
+        
+        .confetti {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #FFD700;
+            opacity: 0;
+        }
+        
+        @keyframes confettiFall {
+            0% {
+                opacity: 1;
+                transform: translateY(0) rotate(0deg);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(100vh) rotate(720deg);
+            }
+        }
+        
+        .popup-mega {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            background: white;
+            padding: 60px;
+            border-radius: 50px;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+            z-index: 10000;
+            text-align: center;
+            border: 10px solid #FFD700;
+            max-width: 90%;
+            transition: transform 0.3s;
+        }
+        
+        .popup-mega.show {
+            transform: translate(-50%, -50%) scale(1);
+        }
+        
+        .popup-mega .emoji {
+            font-size: 120px;
+            margin-bottom: 30px;
+        }
+        
+        .popup-mega .text {
+            font-size: 48px;
+            font-weight: bold;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+        
+        .popup-mega .details {
+            font-size: 32px;
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        @media (max-width: 768px) {
+            .fun-header h1 {
+                font-size: 48px;
+            }
+            
+            .card-header {
+                font-size: 40px;
+            }
+            
+            .big-emoji {
+                font-size: 100px;
+            }
+            
+            .activities-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .rewards-mega-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-mega-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .mega-buttons {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="fun-header">
+        <h1>⭐ אני אוסף הצלחות! ⭐</h1>
+    </div>
+    
+    <div class="container">
+        <!-- Info Card -->
+        <div class="card">
+            <div class="big-emoji">🎈</div>
+            <div class="info-input">
+                <label>שמי:</label>
+                <input type="text" id="childName" placeholder="מה שמך?">
+            </div>
+            <div class="info-input">
+                <label>התאריך:</label>
+                <input type="date" id="currentDate">
+            </div>
+        </div>
+        
+        <!-- Summary Card -->
+        <div class="card summary-mega" id="summaryCard" style="display: none;">
+            <h3>🏆 הסיכום שלי היום! 🏆</h3>
+            <div class="stats-mega-grid">
+                <div class="stat-mega">
+                    <div class="stat-value-huge" id="successRate">0%</div>
+                    <div class="stat-label-big">הצלחה!</div>
+                </div>
+                <div class="stat-mega">
+                    <div class="stat-value-huge" id="totalStars">0/9</div>
+                    <div class="stat-label-big">כוכבים</div>
+                </div>
+                <div class="stat-mega">
+                    <div class="stat-value-huge" id="violenceCount">0</div>
+                    <div class="stat-label-big">אלימות</div>
+                </div>
+                <div class="stat-mega">
+                    <div class="stat-value-huge" id="treasureStatus">❓</div>
+                    <div class="stat-label-big">אוצר</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Goals Card -->
+        <div class="card">
+            <div class="card-header">🎯 המטרות שלי!</div>
+            
+            <div class="goal-box">
+                <div class="goal-emoji">1️⃣</div>
+                <input type="text" class="goal-input" id="goal1" placeholder="מטרה ראשונה...">
+                <div class="mega-star off" data-goal="1">⭐</div>
+            </div>
+            
+            <div class="goal-box">
+                <div class="goal-emoji">2️⃣</div>
+                <input type="text" class="goal-input" id="goal2" placeholder="מטרה שנייה...">
+                <div class="mega-star off" data-goal="2">⭐</div>
+            </div>
+            
+            <div class="goal-box">
+                <div class="goal-emoji">3️⃣</div>
+                <input type="text" class="goal-input" id="goal3" placeholder="מטרה שלישית...">
+                <div class="mega-star off" data-goal="3">⭐</div>
+            </div>
+        </div>
+        
+        <!-- Activities Card -->
+        <div class="card">
+            <div class="card-header">🌈 הפעילויות שלי!</div>
+            
+            <div class="activities-grid">
+                <div class="activity-mega-card morning">
+                    <div class="activity-emoji-giant">🎨</div>
+                    <div class="activity-name-giant">משחק בוקר</div>
+                    <div class="star-row">
+                        <div class="activity-star-giant off" data-activity="morning" data-index="0">⭐</div>
+                        <div class="activity-star-giant off" data-activity="morning" data-index="1">⭐</div>
+                        <div class="activity-star-giant off" data-activity="morning" data-index="2">⭐</div>
+                    </div>
+                </div>
+                
+                <div class="activity-mega-card meal">
+                    <div class="activity-emoji-giant">🍎</div>
+                    <div class="activity-name-giant">ארוחה</div>
+                    <div class="star-row">
+                        <div class="activity-star-giant off" data-activity="meal" data-index="0">⭐</div>
+                        <div class="activity-star-giant off" data-activity="meal" data-index="1">⭐</div>
+                        <div class="activity-star-giant off" data-activity="meal" data-index="2">⭐</div>
+                    </div>
+                </div>
+                
+                <div class="activity-mega-card outdoor">
+                    <div class="activity-emoji-giant">⚽</div>
+                    <div class="activity-name-giant">משחק חוץ</div>
+                    <div class="star-row">
+                        <div class="activity-star-giant off" data-activity="outdoor" data-index="0">⭐</div>
+                        <div class="activity-star-giant off" data-activity="outdoor" data-index="1">⭐</div>
+                        <div class="activity-star-giant off" data-activity="outdoor" data-index="2">⭐</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Violence Card -->
+        <div class="card violence-box">
+            <h3>🚫 התנהגות אלימה 🚫</h3>
+            <div class="violence-controls">
+                <button class="violence-btn" onclick="changeViolence(1)">+</button>
+                <div class="violence-number" id="violenceDisplay">0</div>
+                <button class="violence-btn" onclick="changeViolence(-1)">−</button>
+            </div>
+        </div>
+        
+        <!-- Treasure Card -->
+        <div class="card treasure-mega-box">
+            <h3>🎁 קופסת האוצר! 🎁</h3>
+            
+            <div class="warning-mega">
+                <p>⚠️ תנאי חשוב! ⚠️</p>
+                <p>אפשר לפתוח רק אם <strong>אין אלימות!</strong></p>
+                <p>📍 פותחים אחרי ארוחה ואחרי חצר!</p>
+            </div>
+            
+            <div style="margin: 30px 0; font-size: 52px; font-weight: bold; color: white; text-shadow: 3px 3px 6px rgba(0,0,0,0.3);">
+                🏆 הפרסים שלי:
+            </div>
+            
+            <div class="rewards-mega-grid">
+                <div class="reward-mega-card" data-reward="sticker">
+                    <div class="reward-emoji-huge">🌟</div>
+                    <div class="reward-name-big">מדבקה</div>
+                </div>
+                
+                <div class="reward-mega-card" data-reward="playtime">
+                    <div class="reward-emoji-huge">🎮</div>
+                    <div class="reward-name-big">זמן משחק</div>
+                </div>
+                
+                <div class="reward-mega-card" data-reward="praise">
+                    <div class="reward-emoji-huge">❤️</div>
+                    <div class="reward-name-big">מחמאה</div>
+                </div>
+                
+                <div class="reward-mega-card" data-reward="surprise">
+                    <div class="reward-emoji-huge">🎁</div>
+                    <div class="reward-name-big">הפתעה</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Teacher Notes -->
+        <div class="card notes-mega-box">
+            <h3>💬 מילים מהגננת:</h3>
+            <textarea id="teacherNotes" placeholder="כתבו משהו יפה..."></textarea>
+        </div>
+        
+        <!-- Parent Notes -->
+        <div class="card notes-mega-box" style="background: linear-gradient(135deg, #FFF9C4 0%, #FFF59D 100%); border-color: #FFA000;">
+            <h3 style="color: #F57C00;">💙 מילים מאבא ואמא:</h3>
+            <textarea id="parentNotes" style="border-color: #FFA000;" placeholder="הורים יקרים..."></textarea>
+        </div>
+        
+        <!-- Action Buttons -->
+        <div class="card">
+            <div class="mega-buttons">
+                <button class="mega-btn btn-save" onclick="saveData()">💾 שמור</button>
+                <button class="mega-btn btn-summary" onclick="showSummary()">📊 סיכום</button>
+                <button class="mega-btn btn-export" onclick="exportData()">📤 ייצא</button>
+                <button class="mega-btn btn-reset" onclick="resetData()">🔄 נקה</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="celebration" id="celebration"></div>
+    
+    <div class="popup-mega" id="popup">
+        <div class="emoji">✅</div>
+        <div class="text">כל הכבוד!</div>
+        <div class="details" id="popupDetails"></div>
+    </div>
+    
+    <script>
+        let violenceCounter = 0;
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('currentDate').valueAsDate = new Date();
+            loadData();
+            setupListeners();
+        });
+        
+        function setupListeners() {
+            // Goal stars
+            document.querySelectorAll('.mega-star').forEach(star => {
+                star.addEventListener('click', function() {
+                    this.classList.toggle('off');
+                    this.classList.toggle('on');
+                    if (this.classList.contains('on')) {
+                        celebrate();
+                    }
+                    autoSave();
+                });
+            });
+            
+            // Activity stars
+            document.querySelectorAll('.activity-star-giant').forEach(star => {
+                star.addEventListener('click', function() {
+                    const activity = this.dataset.activity;
+                    const index = parseInt(this.dataset.index);
+                    toggleActivityStar(activity, index);
+                });
+            });
+            
+            // Reward cards
+            document.querySelectorAll('.reward-mega-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    this.classList.toggle('selected');
+                    autoSave();
+                });
+            });
+            
+            // Auto-save
+            document.querySelectorAll('input, textarea').forEach(el => {
+                el.addEventListener('input', autoSave);
+            });
+        }
+        
+        function toggleActivityStar(activity, clickedIndex) {
+            const stars = document.querySelectorAll(`[data-activity="${activity}"]`);
+            const isOn = stars[clickedIndex].classList.contains('on');
+            
+            if (isOn) {
+                for (let i = clickedIndex; i < stars.length; i++) {
+                    stars[i].classList.remove('on');
+                    stars[i].classList.add('off');
+                }
+            } else {
+                for (let i = 0; i <= clickedIndex; i++) {
+                    stars[i].classList.remove('off');
+                    stars[i].classList.add('on');
+                }
+                celebrate();
+            }
+            
+            autoSave();
+        }
+        
+        function changeViolence(delta) {
+            violenceCounter = Math.max(0, violenceCounter + delta);
+            document.getElementById('violenceDisplay').textContent = violenceCounter;
+            autoSave();
+        }
+        
+        function celebrate() {
+            const colors = ['#FF6B9D', '#FFD700', '#7FFF00', '#00CED1', '#FF69B4'];
+            const celebration = document.getElementById('celebration');
+            
+            for (let i = 0; i < 20; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.animation = `confettiFall ${2 + Math.random() * 2}s linear`;
+                celebration.appendChild(confetti);
+                
+                setTimeout(() => confetti.remove(), 4000);
+            }
+        }
+        
+        function calculateStats() {
+            const activeStars = document.querySelectorAll('.activity-star-giant.on').length;
+            const totalStars = 9;
+            const successRate = Math.round((activeStars / totalStars) * 100);
+            const canOpen = violenceCounter === 0 && activeStars >= 6;
+            
+            return { activeStars, totalStars, successRate, canOpen };
+        }
+        
+        function showSummary() {
+            const stats = calculateStats();
+            
+            document.getElementById('successRate').textContent = stats.successRate + '%';
+            document.getElementById('totalStars').textContent = `${stats.activeStars}/${stats.totalStars}`;
+            document.getElementById('violenceCount').textContent = violenceCounter;
+            document.getElementById('treasureStatus').textContent = stats.canOpen ? '✅' : '❌';
+            
+            const card = document.getElementById('summaryCard');
+            card.style.display = 'block';
+            card.scrollIntoView({ behavior: 'smooth' });
+            
+            celebrate();
+            
+            setTimeout(() => {
+                card.style.display = 'none';
+            }, 10000);
+        }
+        
+        function saveData() {
+            const stats = calculateStats();
+            
+            const data = {
+                savedAt: new Date().toISOString(),
+                date: document.getElementById('currentDate').value,
+                childName: document.getElementById('childName').value,
+                goals: {
+                    goal1: {
+                        text: document.getElementById('goal1').value,
+                        done: document.querySelector('[data-goal="1"]').classList.contains('on')
+                    },
+                    goal2: {
+                        text: document.getElementById('goal2').value,
+                        done: document.querySelector('[data-goal="2"]').classList.contains('on')
+                    },
+                    goal3: {
+                        text: document.getElementById('goal3').value,
+                        done: document.querySelector('[data-goal="3"]').classList.contains('on')
+                    }
+                },
+                activities: {
+                    morning: getStars('morning'),
+                    meal: getStars('meal'),
+                    outdoor: getStars('outdoor')
+                },
+                violence: violenceCounter,
+                rewards: getRewards(),
+                notes: {
+                    teacher: document.getElementById('teacherNotes').value,
+                    parent: document.getElementById('parentNotes').value
+                },
+                stats: {
+                    stars: stats.activeStars,
+                    total: stats.totalStars,
+                    rate: stats.successRate,
+                    canOpen: stats.canOpen
+                }
+            };
+            
+            const dateKey = data.date || new Date().toISOString().split('T')[0];
+            localStorage.setItem(`success-${dateKey}`, JSON.stringify(data));
+            localStorage.setItem('success-latest', JSON.stringify(data));
+            
+            showPopup('נשמר!', 
+                `${stats.successRate}% הצלחה!<br>` +
+                `${stats.activeStars}/${stats.totalStars} כוכבים<br>` +
+                `${violenceCounter} אלימות<br>` +
+                `${stats.canOpen ? '✅ אפשר לפתוח אוצר!' : '❌ עוד קצת...'}`
+            );
+            
+            celebrate();
+        }
+        
+        function autoSave() {
+            clearTimeout(window.saveTimeout);
+            window.saveTimeout = setTimeout(saveData, 1000);
+        }
+        
+        function loadData() {
+            const dateKey = document.getElementById('currentDate').value;
+            const saved = localStorage.getItem(`success-${dateKey}`) || 
+                         localStorage.getItem('success-latest');
+            
+            if (!saved) return;
+            
+            try {
+                const data = JSON.parse(saved);
+                
+                if (data.childName) document.getElementById('childName').value = data.childName;
+                if (data.date) document.getElementById('currentDate').value = data.date;
+                
+                // Load goals
+                ['goal1', 'goal2', 'goal3'].forEach((g, i) => {
+                    if (data.goals && data.goals[g]) {
+                        document.getElementById(g).value = data.goals[g].text || '';
+                        const star = document.querySelector(`[data-goal="${i+1}"]`);
+                        if (data.goals[g].done) {
+                            star.classList.remove('off');
+                            star.classList.add('on');
+                        }
+                    }
+                });
+                
+                // Load activities
+                ['morning', 'meal', 'outdoor'].forEach(act => {
+                    if (data.activities && data.activities[act]) {
+                        data.activities[act].forEach((on, idx) => {
+                            const star = document.querySelector(`[data-activity="${act}"][data-index="${idx}"]`);
+                            if (star && on) {
+                                star.classList.remove('off');
+                                star.classList.add('on');
+                            }
+                        });
+                    }
+                });
+                
+                // Load violence
+                if (data.violence !== undefined) {
+                    violenceCounter = data.violence;
+                    document.getElementById('violenceDisplay').textContent = violenceCounter;
+                }
+                
+                // Load rewards
+                if (data.rewards) {
+                    data.rewards.forEach(r => {
+                        const card = document.querySelector(`[data-reward="${r}"]`);
+                        if (card) card.classList.add('selected');
+                    });
+                }
+                
+                // Load notes
+                if (data.notes) {
+                    if (data.notes.teacher) document.getElementById('teacherNotes').value = data.notes.teacher;
+                    if (data.notes.parent) document.getElementById('parentNotes').value = data.notes.parent;
+                }
+            } catch (e) {
+                console.error('Error loading:', e);
+            }
+        }
+        
+        function getStars(activity) {
+            return Array.from(document.querySelectorAll(`[data-activity="${activity}"]`))
+                .map(s => s.classList.contains('on'));
+        }
+        
+        function getRewards() {
+            return Array.from(document.querySelectorAll('.reward-mega-card.selected'))
+                .map(c => c.dataset.reward);
+        }
+        
+        function exportData() {
+            const data = saveData();
+            const stats = calculateStats();
+            
+            const text = `
+=================================
+🌟 דו"ח יומי - אני אוסף הצלחות! 🌟
+=================================
+
+📅 תאריך: ${document.getElementById('currentDate').value}
+👦 שם: ${document.getElementById('childName').value}
+
+📊 סיכום היום:
+--------------
+✅ אחוז הצלחה: ${stats.successRate}%
+⭐ כוכבים: ${stats.activeStars}/${stats.totalStars}
+🚫 אלימות: ${violenceCounter}
+${stats.canOpen ? '🎉 זכאי לפתוח אוצר!' : '❌ לא זכאי לאוצר'}
+
+=================================
+`;
+            
+            const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `הצלחות-${document.getElementById('currentDate').value}.txt`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            showPopup('הורד!', 'הקובץ נשמר במכשיר');
+        }
+        
+        function resetData() {
+            if (confirm('למחוק הכל?')) {
+                const dateKey = document.getElementById('currentDate').value;
+                localStorage.removeItem(`success-${dateKey}`);
+                location.reload();
+            }
+        }
+        
+        function showPopup(msg, details) {
+            const popup = document.getElementById('popup');
+            popup.querySelector('.text').textContent = msg;
+            popup.querySelector('.details').innerHTML = details;
+            popup.classList.add('show');
+            
+            setTimeout(() => popup.classList.remove('show'), 3000);
+        }
+        
+        document.getElementById('currentDate').addEventListener('change', () => {
+            if (confirm('לטעון נתונים מתאריך זה?')) loadData();
+        });
+    </script>
+</body>
+</html>
